@@ -424,7 +424,7 @@ class WandbLogger:
 
         self._wandb = wandb
 
-        self._wandb_init = dict(name=name, project=project, dir=save_dir)
+        self._wandb_init = dict(name=name, project=project, dir=save_dir, config=config)
 
         self._wandb_init.update(**init_kwargs)
 
