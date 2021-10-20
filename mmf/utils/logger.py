@@ -408,6 +408,7 @@ class WandbLogger:
 
     def __init__(
         self,
+        entity: Optional[str] = None,
         name: Optional[str] = None,
         save_dir: Optional[str] = None,
         project: Optional[str] = None,
@@ -424,7 +425,9 @@ class WandbLogger:
 
         self._wandb = wandb
 
-        self._wandb_init = dict(name=name, project=project, dir=save_dir, config=config)
+        self._wandb_init = dict(
+            entity=entity, name=name, project=project, dir=save_dir, config=config
+        )
 
         self._wandb_init.update(**init_kwargs)
 
